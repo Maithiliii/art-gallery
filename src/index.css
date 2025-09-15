@@ -22,7 +22,6 @@ code {
     monospace;
 }
 
-/* Particle animations */
 .particle {
   position: absolute;
   width: 6px;
@@ -44,7 +43,6 @@ code {
   }
 }
 
-/* Normal scrolling behavior */
 html {
   overflow-x: hidden;
 }
@@ -53,7 +51,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -74,18 +71,15 @@ body {
   background: #555;
 }
 
-/* Enhanced text selection */
 ::selection {
   background: rgba(0,0,0,0.1);
   color: inherit;
 }
 
-/* Smooth transitions for all elements */
 * {
   transition: all 0.3s ease;
 }
 
-/* Custom gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -93,7 +87,6 @@ body {
   background-clip: text;
 }
 
-/* Glitch effects */
 .glitch-container {
   position: relative;
   overflow: hidden;
@@ -148,7 +141,6 @@ body {
   }
 }
 
-/* Dark mode styles */
 .dark {
   color-scheme: dark;
 }
