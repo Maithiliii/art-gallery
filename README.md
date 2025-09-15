@@ -1,28 +1,38 @@
 # Art Gallery  
 
-A modern art gallery website built with **React** and **Tailwind CSS**.  
-It features a hero section with floating particles, smooth scroll-based animations, and sections to showcase curated artworks.  
+An **interactive art gallery web experience** built with **React, TailwindCSS, and Framer Motion**.  
+This project combines **visuals, motion, and sound** to create a surreal, immersive way of exploring artwork.  
+
+When you scroll, artworks reveal themselves with **smooth animations and glitch effects**, while subtle **ambient sounds** play when hovering over each piece, making the gallery feel alive.  
 
 ---
 
-##  Features  
-- Elegant hero section with overlay + animated particles  
-- Smooth scroll reveal + parallax-style artwork sections  
-- Responsive design for desktop & mobile  
-- Built using React + TailwindCSS  
+## ✨ Features  
 
----
-
-##  Tech Stack  
-- [React](https://react.dev/)  
-- [Tailwind CSS](https://tailwindcss.com/)  
-- JavaScript (ES6+)  
+-  Dynamic Scroll Animations – Images and text fade, slide, and scale into view as you scroll  
+-  Glitch Effects – Adds a distorted, digital-art vibe to images on hover  
+-  Interactive Ambient Sound – Each artwork triggers a unique generated sound using the Web Audio API  
+-  Particle Backgrounds – Floating particles give the landing screen an atmospheric feel  
+-  Responsive Layout – Works across desktop and mobile  
+-  Framer Motion Animations – Smooth transitions that bring the gallery to life  
 
 ---
 
 ##  Getting Started  
 
-Clone the repo:  
+Clone the repo and install dependencies:  
+
 ```bash
-git clone https://github.com/your-username/art-gallery.git
+git clone https://github.com/Maithiliii/art-gallery.git
 cd art-gallery
+npm install
+```
+
+Run the development server:  
+```bash
+npm start
+```
+Built With
+- [React](https://react.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
