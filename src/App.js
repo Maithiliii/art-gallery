@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./index.css";
 
-// Reusable Section component with alternating layout and glitch effects
 function Section({ title, description, image, isEven = false, onImageHover = () => {}, onImageLeave = () => {} }) {
   const ref = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -55,7 +54,6 @@ function Section({ title, description, image, isEven = false, onImageHover = () 
         </p>
       </motion.div>
 
-      {/* Image with enhanced scroll animation and glitch effects */}
       <motion.div 
         style={{ y, scale }} 
         className="flex-1 relative group z-20"
@@ -74,7 +72,6 @@ function Section({ title, description, image, isEven = false, onImageHover = () 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
           
-          {/* Glitch effect overlay */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             <div className="glitch-overlay"></div>
           </div>
@@ -91,14 +88,11 @@ function App() {
   const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   
-  // Audio context state
   const [audioContext, setAudioContext] = useState(null);
   const [isAudioEnabled, setIsAudioEnabled] = useState(false);
   
-  // Progressive darkening based on scroll (background only)
   const darkenOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.8]);
-  
-  // Initialize audio context on first user interaction
+
   const enableAudio = () => {
     if (!audioContext) {
       try {
@@ -112,7 +106,6 @@ function App() {
     }
   };
 
-  // Create ambient sound using Web Audio API
   const createAmbientSound = (frequency, volume, waveType) => {
     console.log('Attempting to play sound:', { frequency, volume, waveType, audioContext, isAudioEnabled });
     
@@ -123,7 +116,7 @@ function App() {
     }
 
     try {
-      // Resume audio context if it's suspended
+    
       if (audioContext.state === 'suspended') {
         audioContext.resume().then(() => {
           console.log('Audio context resumed');
@@ -153,7 +146,6 @@ function App() {
     }
   };
 
-  // Sound effects for different artworks
   const artworkSounds = {
     "Blooming Perception": () => createAmbientSound(220, 0.1, 'sine'), // Low, mysterious tone
     "Vessel of Echoes": () => createAmbientSound(330, 0.15, 'triangle'), // Echoing, hollow sound
@@ -165,7 +157,6 @@ function App() {
     "Smoke and Wing": () => createAmbientSound(100, 0.03, 'sine'), // Low, ethereal, unsettling
   };
 
-  // Handle image hover for sound effects
   const handleImageHover = (artworkTitle) => {
     console.log('handleImageHover called with:', artworkTitle);
     console.log('Available sounds:', Object.keys(artworkSounds));
@@ -185,7 +176,6 @@ function App() {
     }
   };
 
-  // Handle image leave to stop sound
   const handleImageLeave = (soundObject) => {
     if (soundObject && soundObject.oscillator && soundObject.gainNode) {
       try {
@@ -201,18 +191,16 @@ function App() {
   return (
     <div className="App" onClick={enableAudio}>
 
-      {/* Progressive Darkening Overlay (background only) */}
       <motion.div 
         className="fixed inset-0 bg-black pointer-events-none z-10"
         style={{ opacity: darkenOpacity }}
       />
 
-      {/* Enhanced Hero Section */}
       <motion.section 
         ref={heroRef}
         className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-gray-100"
       >
-        {/* Background image with parallax */}
+  
         <motion.div 
           style={{ y, scale }}
           className="absolute inset-0 w-full h-full"
@@ -224,10 +212,8 @@ function App() {
           />
         </motion.div>
 
-        {/* Enhanced overlay with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-black/30" />
 
-        {/* Floating particles */}
         <div className="absolute inset-0 z-10 pointer-events-none">
           {Array.from({ length: 20 }).map((_, i) => (
             <span
@@ -243,7 +229,6 @@ function App() {
           ))}
         </div>
 
-        {/* Text content with dynamic color based on scroll */}
         <motion.div 
           className="relative z-20 px-6 md:px-12 max-w-4xl"
           initial={{ opacity: 0, y: 50 }}
@@ -284,7 +269,6 @@ function App() {
           </motion.p>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div 
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
           initial={{ opacity: 0, y: 20 }}
@@ -305,7 +289,6 @@ function App() {
         </motion.div>
       </motion.section>
 
-      {/* Parallax Scrolling Sections with alternating layout */}
       <Section
         title="Blooming Perception"
         description="A distorted self-portrait where the eye becomes a flower, symbolizing vision as growth. The tangled curls frame the chaos of thought, blurring the line between identity and imagination."
